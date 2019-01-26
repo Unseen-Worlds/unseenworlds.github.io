@@ -1,16 +1,8 @@
-# Barebones Gatsby Starter
+# USW
 
-- [TypeScript](https://www.typescriptlang.org/)
-- [Styled Components](https://www.styled-components.com/)
-- [Rebass](https://github.com/rebassjs/rebass)
-- [MDX](https://mdxjs.com/)
-- [Jest](https://jestjs.io/)
-- [NetlifyCMS](https://www.netlifycms.org/), with local file-system and MDX
-  support
-- [Lint Staged](https://github.com/okonet/lint-staged)
-- [Prettier](https://prettier.io/)
+(wip)
 
-Or, all the things I'd typically use.
+https://app.netlify.com/sites/zealous-ardinghelli-d2a5f7/
 
 ### Development
 
