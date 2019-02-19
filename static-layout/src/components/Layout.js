@@ -1,10 +1,12 @@
 import React from "react"
-import { Logo } from "./components/Logo"
-import { Navigation } from "./components/Navigation"
+import styled from "styled-components"
+
+import { Logo } from "./Logo"
+import { Navigation } from "./Navigation"
 
 export const Layout = ({ children }) => {
   return (
-    <div>
+    <Container>
       <div>
         <Logo />
       </div>
@@ -13,6 +15,10 @@ export const Layout = ({ children }) => {
       </div>
 
       <div>{children}</div>
-    </div>
+    </Container>
   )
 }
+
+const Container = styled.div`
+  padding: 20px;
+`
