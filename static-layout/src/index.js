@@ -4,7 +4,6 @@ import { Router } from "@reach/router"
 import { ThemeProvider } from "styled-components"
 
 import { Layout } from "./components/Layout"
-
 import { Home } from "./routes/Home"
 import { AllReleases } from "./routes/AllReleases"
 import { About } from "./routes/About"
@@ -18,6 +17,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
+
         <Router>
           <Layout path="/">
             <Home path="/" />

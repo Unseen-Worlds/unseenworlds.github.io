@@ -9,4 +9,4 @@ typings/
 
 # Gatsby files
 .cache/
-public
+/public
