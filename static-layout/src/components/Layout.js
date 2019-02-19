@@ -3,22 +3,22 @@ import styled from "styled-components"
 
 import { Logo } from "./Logo"
 import { Navigation } from "./Navigation"
+import { Box } from "rebass"
+import { space } from "../theme"
 
 export const Layout = ({ children }) => {
   return (
     <Container>
-      <div>
-        <Logo />
-      </div>
-      <div>
-        <Navigation />
-      </div>
+      <Logo />
+      <Navigation />
 
-      <div>{children}</div>
+      <Box>{children}</Box>
     </Container>
   )
 }
 
-const Container = styled.div`
-  padding: 20px;
+const Container = styled(Box)`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: ${space("4")}px;
 `
