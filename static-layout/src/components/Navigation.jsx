@@ -8,7 +8,7 @@ import { Serif } from "./Typography"
 const LinkItem = props => {
   return (
     <Box mr={3} mt={3}>
-      <Serif color="black60" size="5">
+      <Serif color="black60" size="4">
         <Link
           to={props.to}
           getProps={({ isCurrent }) =>
@@ -38,8 +38,11 @@ export const Navigation = () => {
 const Container = styled(Flex)`
   font-family: "Playfair Display", serif;
 
-  a:hover {
-    color: ${color("purpleLight")};
+  a {
+    text-decoration: none;
+    &:hover {
+      color: ${color("purpleDark")};
+    }
   }
 
   .active {

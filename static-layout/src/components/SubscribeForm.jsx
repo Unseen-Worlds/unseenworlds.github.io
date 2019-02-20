@@ -1,8 +1,9 @@
 import React from "react"
-import { Button as ButtonBase, Flex, Text, Box } from "rebass"
+import { Flex, Text, Box } from "rebass"
 import styled from "styled-components"
-import { space } from "../theme"
+import { space, font } from "../theme"
 import { Spacer } from "./Spacer"
+import { Button } from "./Button"
 
 export const SubscribeForm = () => {
   return (
@@ -12,21 +13,14 @@ export const SubscribeForm = () => {
       <Input type="text" placeholder="Email address" />
 
       <Box mt={1}>
-        <Button bg="teal">Subscribe</Button>
+        <Button>Subscribe</Button>
       </Box>
     </Flex>
   )
 }
 
 const Input = styled.input`
-  font-family: ${props => props.theme.typography.family.sans};
+  font-family: ${font("sans")};
   height: ${space(2)};
   width: 100%;
-`
-
-const Button = styled(ButtonBase)`
-  border-radius: 0;
-  padding: ${space(".3")} ${space("1")};
-  font-size: 12px;
-  font-weight: 200;
 `

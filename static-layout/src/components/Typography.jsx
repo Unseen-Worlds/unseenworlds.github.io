@@ -3,32 +3,29 @@ import styled from "styled-components"
 import { Text as TextBase } from "rebass"
 import { theme } from "../theme"
 
-/**
- * Typography helpers can be used like so:
- *
- * <Sans size='3' weight='bold'>Hello</Sans>
- *
- * Or responsive:
- *
- * <Sans size={['3', '4']}>How are you</Sans>
- *
- */
-export const Sans = props => buildType({ fontFamily: "sans", ...props })
-export const Serif = props => buildType({ fontFamily: "serif", ...props })
+// Typography types
+
+export const Sans = props => buildType({ ...props, family: "sans" })
+export const Serif = props => buildType({ ...props, family: "serif" })
+
+// Helpers
 
 function buildType({
-  fontFamily = "sans",
+  family = "sans",
   size = "3",
   weight = "regular",
   children,
+  ...rest
 }) {
   const { fontSize, lineHeight } = determineFontSizes(size)
-  const fontWeight = theme.typography.weights[weight]
+  const fontFamily = theme.typography.fonts[family].fontFamily
+  const fontWeight = theme.typography.fonts[family].weights[weight]
   const textProps = {
     fontSize,
     fontFamily,
     fontWeight,
     lineHeight,
+    ...rest,
   }
 
   return <Text {...textProps}>{children}</Text>
@@ -36,9 +33,9 @@ function buildType({
 
 const Text = styled(TextBase)`
   font-family: ${props => props.fontFamily};
-  font-size: ${props => props.fontSize}px;
+  font-size: ${props => props.fontSize};
   font-weight: ${props => props.fontWeight};
-  line-height: ${props => props.lineHeight}px;
+  line-height: ${props => props.lineHeight};
 `
 
 /**

@@ -20,22 +20,32 @@ export const theme = {
     black10: "#E5E5E5",
     black5: "#F8F8F8",
 
-    purpleDark: "#ce6fc4",
     purpleLight: "#deb6da",
+    purpleDark: "#ce6fc4",
 
     teal: "#6faece",
   },
 
   typography: {
-    family: {
-      sans: "Gothic A1",
-      serif: "Playfair Display",
-    },
-    weights: {
-      light: 300,
-      regular: 400,
-      semiBold: 600,
-      bold: 700,
+    fonts: {
+      sans: {
+        fontFamily: "Gothic A1",
+        weights: {
+          light: 300,
+          regular: 400,
+          semibold: 600,
+          bold: 700,
+          black: 900,
+        },
+      },
+      serif: {
+        fontFamily: "Playfair Display",
+        weights: {
+          regular: 400,
+          bold: 700,
+          black: 900,
+        },
+      },
     },
     sizes: {
       "0": {
@@ -76,8 +86,6 @@ export const theme = {
    * Each of the below values maps to pixels, and is base 10 for conciseness.
    */
   space: {
-    ".3": 3,
-    ".5": 5,
     "1": 10,
     "2": 20,
     "3": 30,
@@ -92,18 +100,23 @@ export const theme = {
 // Helpers
 export const color = colorKey => theme.colors[colorKey]
 export const space = spaceKey => theme.space[spaceKey] + "px"
+export const font = fontKey => theme.typography.fonts[fontKey].fontFamily
 
 // Globals
 export const GlobalStyle = createGlobalStyle`
   body, html {
     background: url(${backgroundImage});
-    font-family: 'Gothic A1', sans-serif;
-    line-height: 1.5;
+    font-family: ${font("sans")}, sans-serif;
     color: ${color("black60")};
+    font-size: ${theme.typography.sizes[3].fontSize}px;
+    line-height: ${theme.typography.sizes[3].lineHeight}px;
   }
 
   a {
-    text-decoration: none;
     color: inherit;
+
+    &:hover {
+      color: ${color("teal")};
+    }
   }
 `

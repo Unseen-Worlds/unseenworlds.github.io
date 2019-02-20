@@ -10,11 +10,13 @@ export const News = () => {
         return (
           <Box key={index}>
             <Flex mb={4}>
-              <Box width="30%" pr={4}>
-                <Sans>{post.title}</Sans>
-                <Sans>{post.date}</Sans>
+              <Box width="40%" pr={6}>
+                <Sans size="6" weight="light">
+                  {post.title}
+                </Sans>
+                <Sans color="black30">{post.date}</Sans>
               </Box>
-              <Box width="70%">{post.content}</Box>
+              <Box width="60%">{post.content}</Box>
             </Flex>
           </Box>
         )

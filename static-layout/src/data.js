@@ -1,4 +1,4 @@
-import release1 from "./assets/releases/medium_UW08.jpg"
+import release1 from "./assets/releases/medium_UW23.jpg"
 import release2 from "./assets/releases/medium_UW09.jpg"
 import release3 from "./assets/releases/medium_UW12.jpg"
 import release4 from "./assets/releases/medium_UW14.png"
