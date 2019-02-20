@@ -12,6 +12,13 @@ export const theme = {
 
     purpleDark: "#ce6fc4",
     purpleLight: "#deb6da",
+
+    teal: "#6faece",
+  },
+
+  fonts: {
+    sans: "Libre Franklin",
+    serif: "Playfair Display",
   },
 
   /**
@@ -35,8 +42,8 @@ export const theme = {
 }
 
 // Helpers
-export const color = colorKey => theme.colors[colorKey]
-export const space = spaceKey => theme.space[spaceKey]
+export const color = colorKey => theme.colors[colorKey] + "px"
+export const space = spaceKey => theme.space[spaceKey] + "px"
 
 // Globals
 export const GlobalStyle = createGlobalStyle`

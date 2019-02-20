@@ -5,6 +5,7 @@ import { Logo } from "./Logo"
 import { Navigation } from "./Navigation"
 import { Box } from "rebass"
 import { space } from "../theme"
+import { Footer } from "./Footer"
 
 export const Layout = ({ children }) => {
   return (
@@ -12,7 +13,9 @@ export const Layout = ({ children }) => {
       <Logo />
       <Navigation />
 
-      <Box>{children}</Box>
+      <Box mt={8}>{children}</Box>
+
+      <Footer />
     </Container>
   )
 }
@@ -20,5 +23,5 @@ export const Layout = ({ children }) => {
 const Container = styled(Box)`
   max-width: 1200px;
   margin: 0 auto;
-  padding: ${space("4")}px;
+  padding: ${space("4")};
 `

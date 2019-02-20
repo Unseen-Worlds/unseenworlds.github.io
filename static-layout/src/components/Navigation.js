@@ -1,13 +1,14 @@
 import React from "react"
-import { Box, Flex, Text } from "rebass"
+import { Box, Flex } from "rebass"
 import { Link } from "@reach/router"
 import styled from "styled-components"
 import { color } from "../theme"
+import { Serif } from "./Typography"
 
 const LinkItem = props => {
   return (
     <Box mr={3} mt={3}>
-      <Text color="black60" fontSize={[2]}>
+      <Serif color="black60" fontSize={[2]}>
         <Link
           to={props.to}
           getProps={({ isCurrent }) =>
@@ -16,7 +17,7 @@ const LinkItem = props => {
         >
           {props.children}
         </Link>
-      </Text>
+      </Serif>
     </Box>
   )
 }
