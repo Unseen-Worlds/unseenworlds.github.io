@@ -11,3 +11,9 @@ cd static-layout
 yarn install
 yarn start
 ```
+
+### Shopify Notes
+
+- https://help.shopify.com/en/api/custom-storefronts/storefront-api
+- https://help.shopify.com/en/api/graphql-admin-api/getting-started
+  - Required for querying metafields
