@@ -1,45 +1,73 @@
 import React from "react"
-import { Box, Image, Button, Flex } from "rebass"
+import { Box, Image, Flex } from "rebass"
 import { Sans, Serif } from "../components/Typography"
+import { allReleasesData } from "../data"
+import { Spacer } from "../components/Spacer"
+import { Button } from "../components/Button"
+
+import samAshleyPhoto from "../assets/large_Sam_Ashley.jpg"
 
 export const Release = () => {
   return (
     <Box>
       <Flex>
-        <Box>
+        <Box pr={6}>
           <Flex>
-            <Box>
-              <Image src="cover" />
+            <Box pr={5}>
+              <Image width="398px" height="auto" src={allReleasesData[2]} />
             </Box>
             <Box>
-              <Sans size="5">SAM ASHLEY & WERNER DURAND</Sans>
-              <Sans size="3">I'd Rather Be Lucky Than Good</Sans>
-              <Sans size="2">UW23 | March 8, 2019</Sans>
-              <Sans size="1">All items include instant download</Sans>
+              <Sans size="5" weight="black" color="black80">
+                SAM ASHLEY & WERNER DURAND
+              </Sans>
 
-              <Button>CD - $11.00</Button>
-              <Button>DIGITAL - $7.00</Button>
-              <Button>LP - $18.00</Button>
+              <Sans size="5">I'd Rather Be Lucky Than Good</Sans>
+
+              <Box my={2}>
+                <Sans>UW23 | March 8, 2019</Sans>
+              </Box>
+
+              <Box my={2}>
+                <Sans size="2">All items include instant download</Sans>
+              </Box>
+
+              <Flex flexDirection="row" width="100%">
+                <Button>CD - $11.00</Button>
+                <Spacer mr={1} />
+                <Button>DIGITAL - $7.00</Button>
+                <Spacer mr={1} />
+                <Button>LP - $18.00</Button>
+              </Flex>
             </Box>
           </Flex>
         </Box>
 
         <Box>
           <Box>
-            <Image src="sam-ashley" />
+            <Image
+              src={samAshleyPhoto}
+              width="200px"
+              height="200px"
+              style={{ objectFit: "cover" }}
+            />
           </Box>
-          <Box>
-            <Serif>You May Also Like</Serif>
-            <Flex>
-              <Image src="1" />
-              <Image src="1" />
+          <Box my={2}>
+            <Box my={2}>
+              <Serif size="5">You May Also Like</Serif>
+            </Box>
+            <Flex justifyContent="space-between">
+              <Image src={allReleasesData[4]} width={90} height={90} />
+              <Image src={allReleasesData[5]} width={90} height={90} />
             </Flex>
           </Box>
         </Box>
       </Flex>
+
+      <Spacer my={5} />
+
       <Flex>
-        <Box width="70%">
-          <Serif>Release Info</Serif>
+        <Box width="76%" pr={6}>
+          <Serif size="6">Release Info</Serif>
 
           <p>
             I’d Rather Be Lucky Than Good is a new recording collaboration of
@@ -72,7 +100,9 @@ export const Release = () => {
             Music).
           </p>
 
-          <Serif>Product Info</Serif>
+          <Box my={3}>
+            <Serif size="6">Product Info</Serif>
+          </Box>
 
           <p>
             Produced by Werner Durand <br />
@@ -92,7 +122,9 @@ export const Release = () => {
 
           <p>Soft-touch gatefold wallet</p>
 
-          <Serif>Press</Serif>
+          <Box my={3}>
+            <Serif size="6">Press</Serif>
+          </Box>
 
           <p>
             <a href="#f">Fifteen Questions Interview with Werner Durand</a>
@@ -115,13 +147,9 @@ export const Release = () => {
             Lucrecia Dalt dives into the world of trance and hypnagagogic states
             with experimental composer and performance artist Sam Ashley
           </p>
-
-          <Serif>Press</Serif>
-
-          <Image src="vimeo image" />
         </Box>
-        <Box width="30%">
-          <Serif>Track list</Serif>
+        <Box width="24%">
+          <Serif size="5">Track list</Serif>
           <p>
             Side A <br />
             1. I’d Rather Be Lucky Than Good [17:51] <br />
@@ -130,7 +158,9 @@ export const Release = () => {
             2. Love Among The Immortals [21:08]
           </p>
 
-          <Serif>Links</Serif>
+          <Box my={3}>
+            <Serif size="5">Links</Serif>
+          </Box>
           <a href="#f">Sam Ashley on Lovely Music</a>
           <a href="#f">Werner Durand homepage</a>
         </Box>

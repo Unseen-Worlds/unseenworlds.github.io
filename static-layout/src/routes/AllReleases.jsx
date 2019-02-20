@@ -20,11 +20,13 @@ export const AllReleases = () => {
                 <Sans size="5" weight="black" color="black80">
                   SAM ASHLEY & WERNER DURAND
                 </Sans>
+
                 <Sans size="5">I'd Rather Be Lucky Than Good</Sans>
 
                 <Box my={2}>
                   <Sans>UW23 | March 8, 2019</Sans>
                 </Box>
+
                 <p>
                   I’d Rather Be Lucky Than Good is a new recording collaboration
                   of Sam Ashley and Werner Durand. Sam Ashley’s mystic parables
@@ -35,11 +37,11 @@ export const AllReleases = () => {
                   world musics.
                 </p>
 
-                <Box my={2}>
-                  <Sans size="3" weight="semibold">
-                    More Info
-                  </Sans>
-                </Box>
+                <Spacer my={2} />
+
+                <Sans size="3" weight="semibold">
+                  More Info
+                </Sans>
 
                 <Flex flexDirection="row" width="100%">
                   <Button>CD - $11.00</Button>
