@@ -6,6 +6,7 @@ import { Sans } from "../components/Typography"
 
 import { allReleasesData } from "../data"
 import blogRelease1 from "../assets/releases/large_UW26.jpg"
+import { Spacer } from "../components/Spacer"
 
 export const Home = () => {
   return (
@@ -20,12 +21,12 @@ export const Home = () => {
         })}
       </Flex>
 
-      <Box mt={4}>
+      <Box mt={8}>
         <Flex>
           <Box width="70%" pr={10}>
             <Box>
               <Box>
-                <Sans fontWeight="400" fontSize={3}>
+                <Sans size={5} weight="bold">
                   New Music from Carl Stone, "Baroo"
                 </Sans>
                 <Sans fontWeight="100" fontSize={1}>
@@ -74,15 +75,15 @@ export const Home = () => {
           <Box width="30%">
             <SubscribeForm />
 
-            <Box mt={3}>
-              <TwitterTimelineEmbed
-                sourceType="profile"
-                screenName="Unseen_Worlds"
-                options={{
-                  height: 500,
-                }}
-              />
-            </Box>
+            <Spacer my={5} />
+
+            <TwitterTimelineEmbed
+              sourceType="profile"
+              screenName="Unseen_Worlds"
+              options={{
+                height: 500,
+              }}
+            />
           </Box>
         </Flex>
       </Box>

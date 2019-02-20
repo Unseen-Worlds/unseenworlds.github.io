@@ -1,11 +1,13 @@
 import React from "react"
 import { Flex, Box } from "rebass"
+import { Sans } from "../components/Typography"
+import { Spacer } from "../components/Spacer"
 
 export const About = () => {
   return (
     <Flex>
       <Box pr={4}>
-        <p>
+        <Sans size="4">
           Unseen Worlds is a record label releasing quality editions of
           unheralded and revolutionary, yet accessible, avant garde music. We
           are interested in media that capture a timeless ecstasy of creativity,
@@ -14,29 +16,32 @@ export const About = () => {
           multitudes, engaging the listener through their historical context and
           sheer musicality. Our releases are surprisingly disparate and
           reliable.
-        </p>
+        </Sans>
 
-        <p>
-          You may get in touch with us at{" "}
-          <a href="#f">unseenworlds@unseenworlds.com</a>
-        </p>
+        <Spacer my={4} />
 
-        <p>You can also connect with us on Facebook, Twitter, and Instagram</p>
+        <Sans>
+          <p>
+            You may get in touch with us at{" "}
+            <a href="#f">unseenworlds@unseenworlds.com</a> <br />
+            You can also connect with us on Facebook, Twitter, and Instagram
+          </p>
 
-        <p>
-          Unseen Worlds <br />
-          PO Box 250558 <br />
-          New York, NY 10025
-        </p>
+          <Spacer my={3} />
+
+          <p>
+            Unseen Worlds <br />
+            PO Box 250558 <br />
+            New York, NY 10025
+          </p>
+        </Sans>
       </Box>
       <Box>
-        <p>Our titles see distribution worldwide via Secretly Distribution</p>
-
+        Our titles see distribution worldwide via Secretly Distribution
         <p>
           Direct Retail Sales: <br />
           <a href="#f">domestic@secretlydistribution.com</a>
         </p>
-
         <p>
           International Sales: <br />
           <a href="#f">international@secretlydistribution.com</a>
