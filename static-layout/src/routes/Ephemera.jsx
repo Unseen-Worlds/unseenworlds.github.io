@@ -5,9 +5,9 @@ import { Box, Flex, Image, Button } from "rebass"
 export const Ephemera = () => {
   return (
     <Flex>
-      {merch.map(item => {
+      {merch.map((item, index) => {
         return (
-          <Box>
+          <Box key={index}>
             <Box>
               <Image src={item.image} />
             </Box>
