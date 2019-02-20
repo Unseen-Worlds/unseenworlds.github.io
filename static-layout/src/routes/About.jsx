@@ -16,7 +16,10 @@ export const About = () => {
           reliable.
         </p>
 
-        <p>You may get in touch with us at unseenworlds@unseenworlds.com</p>
+        <p>
+          You may get in touch with us at{" "}
+          <a href="#f">unseenworlds@unseenworlds.com</a>
+        </p>
 
         <p>You can also connect with us on Facebook, Twitter, and Instagram</p>
 
@@ -31,12 +34,12 @@ export const About = () => {
 
         <p>
           Direct Retail Sales: <br />
-          domestic@secretlydistribution.com
+          <a href="#f">domestic@secretlydistribution.com</a>
         </p>
 
         <p>
           International Sales: <br />
-          international@secretlydistribution.com
+          <a href="#f">international@secretlydistribution.com</a>
         </p>
       </Box>
     </Flex>
