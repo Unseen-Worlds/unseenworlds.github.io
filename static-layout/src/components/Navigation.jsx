@@ -27,6 +27,7 @@ export const Navigation = () => {
     <Container my={2}>
       <LinkItem to="/">Home</LinkItem>
       <LinkItem to="/all-releases">All Releases</LinkItem>
+      <LinkItem to="/release">Release</LinkItem>
       <LinkItem to="/about">About</LinkItem>
       <LinkItem to="/news">News</LinkItem>
       <LinkItem to="/ephemera">Ephemera</LinkItem>
