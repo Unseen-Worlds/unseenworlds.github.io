@@ -96,25 +96,24 @@ export const Release = () => {
 
           <p>
             <a href="#f">Fifteen Questions Interview with Werner Durand</a>
+          </p>
 
-            <p>
-              “There are times when I wish I could just stay inside the music,
-              not because I reject so-called reality, but because I experience
-              it as a kind of ideal one. Setting up situations where this can
-              happen for both performers and audiences should be a goal. The
-              Dream House concept by La Monte Young is a very good example. Just
-              let the dream come true.”
-            </p>
+          <p>
+            “There are times when I wish I could just stay inside the music, not
+            because I reject so-called reality, but because I experience it as a
+            kind of ideal one. Setting up situations where this can happen for
+            both performers and audiences should be a goal. The Dream House
+            concept by La Monte Young is a very good example. Just let the dream
+            come true.”
           </p>
 
           <p>
             <a href="#f">Sam Ashley on the Meaning of Trance</a>
+          </p>
 
-            <p>
-              Lucrecia Dalt dives into the world of trance and hypnagagogic
-              states with experimental composer and performance artist Sam
-              Ashley
-            </p>
+          <p>
+            Lucrecia Dalt dives into the world of trance and hypnagagogic states
+            with experimental composer and performance artist Sam Ashley
           </p>
 
           <Serif>Press</Serif>

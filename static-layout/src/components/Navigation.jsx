@@ -8,7 +8,7 @@ import { Serif } from "./Typography"
 const LinkItem = props => {
   return (
     <Box mr={3} mt={3}>
-      <Serif color="black60" fontSize={[2]}>
+      <Serif color="black60" size="5">
         <Link
           to={props.to}
           getProps={({ isCurrent }) =>

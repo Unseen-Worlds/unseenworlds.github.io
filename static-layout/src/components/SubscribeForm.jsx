@@ -19,7 +19,7 @@ export const SubscribeForm = () => {
 }
 
 const Input = styled.input`
-  font-family: ${props => props.theme.fonts.sans};
+  font-family: ${props => props.theme.typography.family.sans};
   height: ${space(2)};
   width: 100%;
 `
