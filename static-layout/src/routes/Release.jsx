@@ -95,7 +95,7 @@ export const Release = () => {
           <Serif>Press</Serif>
 
           <p>
-            <a href="#">Fifteen Questions Interview with Werner Durand</a>
+            <a href="#f">Fifteen Questions Interview with Werner Durand</a>
 
             <p>
               “There are times when I wish I could just stay inside the music,
@@ -108,7 +108,7 @@ export const Release = () => {
           </p>
 
           <p>
-            <a href="#">Sam Ashley on the Meaning of Trance</a>
+            <a href="#f">Sam Ashley on the Meaning of Trance</a>
 
             <p>
               Lucrecia Dalt dives into the world of trance and hypnagagogic
@@ -132,8 +132,8 @@ export const Release = () => {
           </p>
 
           <Serif>Links</Serif>
-          <a href="#">Sam Ashley on Lovely Music</a>
-          <a href="#">Werner Durand homepage</a>
+          <a href="#f">Sam Ashley on Lovely Music</a>
+          <a href="#f">Werner Durand homepage</a>
         </Box>
       </Flex>
     </Box>
