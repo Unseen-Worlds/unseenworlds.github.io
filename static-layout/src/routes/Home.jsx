@@ -4,9 +4,8 @@ import { TwitterTimelineEmbed } from "react-twitter-embed"
 import { SubscribeForm } from "../components/SubscribeForm"
 import { Sans } from "../components/Typography"
 
-import { allReleasesData } from '../data'
+import { allReleasesData } from "../data"
 import blogRelease1 from "../assets/releases/large_UW26.jpg"
-
 
 export const Home = () => {
   return (
@@ -55,24 +54,20 @@ export const Home = () => {
                   <i>Upcoming Live Dates:</i>
                 </p>
 
-                <p>
-                  <strong>2019 March</strong>
-                  <ul>
-                    <li>
-                      March 16 - Brooklyn NY - Murmrr Ballroom w/ Eli Keszler
-                      (save $5 w/ advance tickets)
-                    </li>
-                    <li>March 17 - Washington DC - Rhizome DC</li>
-                    <li>March 21-24 - Knoxville TN - Big Ears Festival 2019</li>
-                  </ul>
-                </p>
+                <strong>2019 March</strong>
+                <ul>
+                  <li>
+                    March 16 - Brooklyn NY - Murmrr Ballroom w/ Eli Keszler
+                    (save $5 w/ advance tickets)
+                  </li>
+                  <li>March 17 - Washington DC - Rhizome DC</li>
+                  <li>March 21-24 - Knoxville TN - Big Ears Festival 2019</li>
+                </ul>
 
-                <p>
-                  <strong>2019 June</strong>
-                  <ul>
-                    <li>June 26 - Berlin, Germany - Kiezsalon</li>
-                  </ul>
-                </p>
+                <strong>2019 June</strong>
+                <ul>
+                  <li>June 26 - Berlin, Germany - Kiezsalon</li>
+                </ul>
               </Box>
             </Box>
           </Box>
