@@ -9,19 +9,21 @@ import { Footer } from "./Footer"
 
 export const Layout = ({ children }) => {
   return (
-    <Container>
-      <Logo />
-      <Navigation />
+    <>
+      <Container>
+        <Logo />
+        <Navigation />
 
-      <Box mt={8}>{children}</Box>
-
+        <Box mt={8}>{children}</Box>
+      </Container>
       <Footer />
-    </Container>
+    </>
   )
 }
 
 const Container = styled(Box)`
   max-width: 1200px;
+  min-height: 94vh;
   margin: 0 auto;
   padding: ${space("4")};
 `

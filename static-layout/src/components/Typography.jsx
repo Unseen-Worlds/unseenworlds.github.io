@@ -12,7 +12,7 @@ export const Serif = props => buildType({ ...props, family: "serif" })
 
 function buildType({
   family = "sans",
-  size = "3",
+  size = "4",
   weight = "regular",
   children,
   ...rest

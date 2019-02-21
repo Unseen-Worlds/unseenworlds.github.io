@@ -11,6 +11,18 @@ import merch1 from "./assets/releases/merch_IMG_0026.JPG"
 import merch2 from "./assets/releases/merch_IMG_0552.jpg"
 import merch3 from "./assets/releases/merc_girma-poster.png"
 
+import samAshley1 from "./assets/large_Sam_Ashley.jpg"
+import samAshley2 from "./assets/sam-ashley-2.jpg"
+import samAshleyVideo from "./assets/sam-ashley-video.png"
+
+import badgeAppleMusic from "./assets/badgeAppleMusic.svg"
+import badgeSpotify from "./assets/badgeSpotify.png"
+
+export const badges = {
+  apple: badgeAppleMusic,
+  spotify: badgeSpotify,
+}
+
 export const allReleasesData = [
   release1,
   release2,
@@ -56,5 +68,64 @@ export const merch = [
     image: merch3,
     content: `Silkscreen. 11"x17". Limited edition of 30. Signed by Girma Yifrashewa.`,
     button: "TOTE | $20.00",
+  },
+]
+
+export const artists = [
+  {
+    name: "Sam Ashley",
+    bio: `SAM ASHLEY'S invention of an experimental trance-mysticism has been a lifelong endeavor, and his art always reflects or incorporates, in some way, this unique mysticism. He has created and performed many original music, performance art and other, more abstract compositions that express this contemporary "shamanism", several of which--including the early pieces Seeing Things (1981) and How To Make Things Go Away (1979)--have had many performances around the US and abroad. Two current works-in-progress, Everyone Laughed When I Sat Down At The Piano and Happy As Can Be (expected)!, feature genuine spirit possession as performance. The essence of his life, then, is the artistic application of an innovative approach to mysticism.`,
+    images: [samAshley1, samAshley2],
+    releases: [
+      {
+        title: `I'd Rather Be Lucky Than Good`,
+        id: "UW23",
+        description:
+          "I’d Rather Be Lucky Than Good is a new recording collaboration of Sam Ashley and Werner Durand. Sam Ashley’s mystic parables imbued with benevolent humor are drawn from a lifelong pursuit of a present-day shamanism. Werner Durand’s wind work on invented and traditional instruments stems from the minimalist tradition, routed through his own unique studies of obscure world musics.",
+      },
+    ],
+    videos: [samAshleyVideo],
+  },
+  {
+    name: "Carl Stone",
+  },
+  {
+    name: "Werner Durand",
+  },
+  {
+    name: "Laurie Speigel",
+  },
+  {
+    name: "Philip Corner",
+  },
+  {
+    name: "Maria Monti",
+  },
+  {
+    name: "Robert Haigh",
+  },
+  {
+    name: "Jacqueline Humbert",
+  },
+  {
+    name: "David Rosenboom",
+  },
+  {
+    name: "C-Shulz",
+  },
+  {
+    name: "Girma Yifrashewa",
+  },
+  {
+    name: "Lubomyr Melnyk",
+  },
+  {
+    name: `"Blue" Gene Tyranny`,
+  },
+  {
+    name: "Dickie Landry",
+  },
+  {
+    name: "Elodie Lauten",
   },
 ]

@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 import backgroundImage from "./assets/background-gradient.png"
+import { Link } from "rebass"
 
 const breakpoints = {
   xl: 1200,
@@ -74,7 +75,15 @@ export const theme = {
       },
       "6": {
         fontSize: 22,
-        lineHeight: 30,
+        lineHeight: 35,
+      },
+      "7": {
+        fontSize: 30,
+        lineHeight: 35,
+      },
+      "8": {
+        fontSize: 40,
+        lineHeight: 45,
       },
     },
   },
@@ -108,11 +117,17 @@ export const GlobalStyle = createGlobalStyle`
     background: url(${backgroundImage});
     font-family: ${font("sans")}, sans-serif;
     color: ${color("black60")};
-    font-size: ${theme.typography.sizes[3].fontSize}px;
-    line-height: ${theme.typography.sizes[3].lineHeight}px;
+    font-size: ${theme.typography.sizes[4].fontSize}px;
+    line-height: ${theme.typography.sizes[4].lineHeight}px;
+  }
+
+  ${Link} {
+    color: inherit;
+    text-decoration: none;
   }
 
   a {
+    transition: all .2s;
     color: inherit;
 
     &:hover {
