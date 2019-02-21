@@ -14,6 +14,7 @@ yarn start
 
 ### Shopify Notes
 
+- https://unseenworlds.myshopify.com/admin
 - https://help.shopify.com/en/api/custom-storefronts/storefront-api
 - https://help.shopify.com/en/api/graphql-admin-api/getting-started
   - Required for querying metafields
