@@ -2,12 +2,13 @@ import React from "react"
 import { Flex, Box } from "rebass"
 import { Sans } from "../components/Typography"
 import { Spacer } from "../components/Spacer"
+import { BorderBox } from "../components/BorderBox"
 
 export const About = () => {
   return (
     <Flex>
-      <Box pr={4}>
-        <Sans size="4">
+      <Box width="60%" pr={3}>
+        <Sans size="6">
           Unseen Worlds is a record label releasing quality editions of
           unheralded and revolutionary, yet accessible, avant garde music. We
           are interested in media that capture a timeless ecstasy of creativity,
@@ -20,7 +21,7 @@ export const About = () => {
 
         <Spacer my={4} />
 
-        <Sans>
+        <Sans size="5">
           <p>
             You may get in touch with us at{" "}
             <a href="#f">unseenworlds@unseenworlds.com</a> <br />
@@ -36,7 +37,7 @@ export const About = () => {
           </p>
         </Sans>
       </Box>
-      <Box>
+      <BorderBox width="40%">
         Our titles see distribution worldwide via Secretly Distribution
         <p>
           Direct Retail Sales: <br />
@@ -46,7 +47,7 @@ export const About = () => {
           International Sales: <br />
           <a href="#f">international@secretlydistribution.com</a>
         </p>
-      </Box>
+      </BorderBox>
     </Flex>
   )
 }

@@ -1,7 +1,7 @@
 import React from "react"
 import { Box, Image, Flex } from "rebass"
 import { Sans, Serif } from "../components/Typography"
-import { allReleasesData } from "../data"
+import { allReleasesData, badges } from "../data"
 import { Spacer } from "../components/Spacer"
 import { Button } from "../components/Button"
 
@@ -38,6 +38,11 @@ export const Release = () => {
                 <Spacer mr={1} />
                 <Button>LP - $18.00</Button>
               </Flex>
+
+              <Box my={5} style={{ opacity: 0.7 }}>
+                <Image src={badges.apple} height={30} /> <br />
+                <Image src={badges.spotify} height={30} />
+              </Box>
             </Box>
           </Flex>
         </Box>

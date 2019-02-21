@@ -13,6 +13,8 @@ import { Ephemera } from "./routes/Ephemera"
 
 import { theme, GlobalStyle } from "./theme"
 import { Transition } from "./components/Transition"
+import { Artist } from "./routes/Artist"
+import { Artists } from "./routes/Artists"
 
 const App = () => {
   return (
@@ -25,6 +27,8 @@ const App = () => {
             <Home path="/" />
             <AllReleases path="/all-releases" />
             <Release path="/release" />
+            <Artists path="/artists" />
+            <Artist path="/artist" />
             <About path="/about" />
             <News path="/news" />
             <Ephemera path="/ephemera" />
