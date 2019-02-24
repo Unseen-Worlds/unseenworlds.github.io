@@ -24,6 +24,7 @@ export const Layout = ({ children }) => {
 const Container = styled(Box)`
   max-width: 1200px;
   min-height: 94vh;
+  height: 100%;
   margin: 0 auto;
   padding: ${space("4")};
 `
