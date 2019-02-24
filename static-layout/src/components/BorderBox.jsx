@@ -4,6 +4,6 @@ import styled from "styled-components"
 
 export const BorderBox = styled(Box).attrs({ p: 2 })`
   border-radius: 3px;
-  border: 1px solid ${p => p.theme.colors.black10};
+  border: 1px solid ${p => p.theme.colors[p.borderColor || "black10"]};
   height: fit-content;
 `

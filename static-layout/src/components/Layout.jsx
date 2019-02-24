@@ -1,20 +1,30 @@
 import React from "react"
 import styled from "styled-components"
-
+import { setGlobal, useGlobal } from "reactn"
+import { Box } from "rebass"
 import { Logo } from "./Logo"
 import { Navigation } from "./Navigation"
-import { Box } from "rebass"
-import { space } from "../theme"
 import { Footer } from "./Footer"
 
+setGlobal({
+  mobileNavOpen: false,
+})
+
 export const Layout = ({ children }) => {
+  const [state] = useGlobal()
+
   return (
     <>
-      <Container>
-        <Logo />
-        <Navigation />
-
-        <Box mt={8}>{children}</Box>
+      <Container p={[1, 4]}>
+        {state.mobileNavOpen ? (
+          <Navigation />
+        ) : (
+          <>
+            <Logo />
+            <Navigation />
+            <Box mt={8}>{children}</Box>
+          </>
+        )}
       </Container>
       <Footer />
     </>
@@ -26,5 +36,4 @@ const Container = styled(Box)`
   min-height: 94vh;
   height: 100%;
   margin: 0 auto;
-  padding: ${space("4")};
 `
