@@ -26,7 +26,7 @@ const LinkItem = props => {
 }
 
 const SocialLink = props => {
-  const size = 25
+  const size = 20
 
   return (
     <Box width={size} height={size} m="3px" mt={1}>
@@ -39,7 +39,7 @@ const SocialLink = props => {
 
 export const Navigation = () => {
   return (
-    <Container my={2} alignItems="center">
+    <Container my={5} alignItems="center">
       <Flex>
         <LinkItem to="/">Home</LinkItem>
         <LinkItem to="/all-releases">All Releases</LinkItem>

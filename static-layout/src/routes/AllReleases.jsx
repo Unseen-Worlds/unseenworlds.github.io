@@ -18,7 +18,7 @@ export const AllReleases = () => {
               </Box>
               <Box width="60%">
                 <Sans size="5" weight="black" color="black80">
-                  {release.artist}
+                  {release.artist.name}
                 </Sans>
 
                 <Sans size="5">{release.album}</Sans>
