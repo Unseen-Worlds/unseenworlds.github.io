@@ -17,7 +17,7 @@ export const Artists = props => {
               key={index}
               mb={8}
               width="30%"
-              onClick={() => props.navigate("/release")}
+              onClick={() => props.navigate("/artist")}
             >
               <Box>
                 <ArtistImage
