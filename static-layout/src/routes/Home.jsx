@@ -1,13 +1,13 @@
 import React from "react"
 import { Box, Flex, Image } from "rebass"
 import { TwitterTimelineEmbed } from "react-twitter-embed"
+import { take } from "lodash"
+import { releases } from "../data"
+import { Spacer } from "../components/Spacer"
 import { SubscribeForm } from "../components/SubscribeForm"
 import { Sans } from "../components/Typography"
-import { take } from "lodash"
-
-import { releases } from "../data"
+import { BorderBox } from "../components/BorderBox"
 import blogRelease1 from "../assets/releases/large_UW26.jpg"
-import { Spacer } from "../components/Spacer"
 
 const RELEASE_CAP = 9
 
@@ -17,16 +17,16 @@ export const Home = () => {
       <Flex flexWrap="wrap" justifyContent="space-between">
         {take(releases, RELEASE_CAP).map((release, key) => {
           return (
-            <Box width="30%" mb="4%" key={key}>
-              <Image src={release.images[0]} />
+            <Box width={["100%", "30%"]} mb={[4, "4%"]} key={key}>
+              <Image width="100%" src={release.images[0]} />
             </Box>
           )
         })}
       </Flex>
 
       <Box mt={8}>
-        <Flex>
-          <Box width="70%" pr={10}>
+        <Flex flexDirection={["column", "row"]}>
+          <Box width={["100%", "70%"]} pr={[0, 10]}>
             <Box>
               <Box>
                 <Sans size={5} weight="bold">
@@ -75,8 +75,10 @@ export const Home = () => {
               </Box>
             </Box>
           </Box>
-          <Box width="30%">
-            <SubscribeForm />
+          <Box width={["100%", "30%"]} my={[4, 0]}>
+            <BorderBox borderColor="white">
+              <SubscribeForm />
+            </BorderBox>
 
             <Spacer my={5} />
 

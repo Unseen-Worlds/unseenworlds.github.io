@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components"
 import backgroundImage from "./assets/background-gradient.png"
 import { Link } from "rebass"
 
-const breakpoints = {
+export const breakpoints = {
   xl: 1200,
   lg: 1024,
   md: 900,
@@ -20,6 +20,7 @@ export const theme = {
     black30: "#C2C2C2",
     black10: "#E5E5E5",
     black5: "#F8F8F8",
+    white: "#fff",
 
     purpleLight: "#deb6da",
     purpleDark: "#ce6fc4",
