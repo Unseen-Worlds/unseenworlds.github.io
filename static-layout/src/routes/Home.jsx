@@ -3,19 +3,22 @@ import { Box, Flex, Image } from "rebass"
 import { TwitterTimelineEmbed } from "react-twitter-embed"
 import { SubscribeForm } from "../components/SubscribeForm"
 import { Sans } from "../components/Typography"
+import { take } from "lodash"
 
-import { allReleasesData } from "../data"
+import { releases } from "../data"
 import blogRelease1 from "../assets/releases/large_UW26.jpg"
 import { Spacer } from "../components/Spacer"
+
+const RELEASE_CAP = 9
 
 export const Home = () => {
   return (
     <Box>
       <Flex flexWrap="wrap" justifyContent="space-between">
-        {allReleasesData.map((imageSrc, key) => {
+        {take(releases, RELEASE_CAP).map((release, key) => {
           return (
             <Box width="30%" mb="4%" key={key}>
-              <Image src={imageSrc} />
+              <Image src={release.images[0]} />
             </Box>
           )
         })}

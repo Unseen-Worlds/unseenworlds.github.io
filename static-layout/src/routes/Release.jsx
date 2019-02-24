@@ -1,30 +1,35 @@
 import React from "react"
 import { Box, Image, Flex } from "rebass"
 import { Sans, Serif } from "../components/Typography"
-import { allReleasesData, badges } from "../data"
+import { releases, badges } from "../data"
 import { Spacer } from "../components/Spacer"
 import { Button } from "../components/Button"
+import { sample } from "lodash"
 
 import samAshleyPhoto from "../assets/large_Sam_Ashley.jpg"
 
 export const Release = () => {
+  const release = releases.find(release => release.id === "UW23")
+
   return (
     <Box>
       <Flex>
         <Box pr={6}>
           <Flex>
             <Box pr={5}>
-              <Image width="398px" height="auto" src={allReleasesData[2]} />
+              <Image width="398px" height="auto" src={release.images[0]} />
             </Box>
             <Box>
               <Sans size="5" weight="black" color="black80">
-                SAM ASHLEY & WERNER DURAND
+                {release.artist}
               </Sans>
 
-              <Sans size="5">I'd Rather Be Lucky Than Good</Sans>
+              <Sans size="5">{release.album}</Sans>
 
               <Box my={2}>
-                <Sans>UW23 | March 8, 2019</Sans>
+                <Sans>
+                  {release.id} | {release.releaseDate}
+                </Sans>
               </Box>
 
               <Box my={2}>
@@ -61,8 +66,8 @@ export const Release = () => {
               <Serif size="5">You May Also Like</Serif>
             </Box>
             <Flex justifyContent="space-between">
-              <Image src={allReleasesData[4]} width={90} height={90} />
-              <Image src={allReleasesData[5]} width={90} height={90} />
+              <Image src={sample(releases).images[0]} width={90} height={90} />
+              <Image src={sample(releases).images[0]} width={90} height={90} />
             </Flex>
           </Box>
         </Box>
