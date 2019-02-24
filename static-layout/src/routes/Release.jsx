@@ -13,7 +13,7 @@ export const Release = () => {
 
   return (
     <Box>
-      <Flex>
+      <Flex justifyContent="space-between">
         <Box pr={6}>
           <Flex>
             <Box pr={5}>
@@ -21,7 +21,7 @@ export const Release = () => {
             </Box>
             <Box>
               <Sans size="5" weight="black" color="black80">
-                {release.artist}
+                {release.artist.name}
               </Sans>
 
               <Sans size="5">{release.album}</Sans>
@@ -56,8 +56,8 @@ export const Release = () => {
           <Box>
             <Image
               src={samAshleyPhoto}
-              width="200px"
-              height="200px"
+              width={200}
+              height={200}
               style={{ objectFit: "cover" }}
             />
           </Box>
@@ -75,8 +75,8 @@ export const Release = () => {
 
       <Spacer my={5} />
 
-      <Flex>
-        <Box width="76%" pr={6}>
+      <Flex justifyContent="space-between">
+        <Box width="80%" pr={6}>
           <Serif size="6">Release Info</Serif>
 
           <p>
@@ -158,7 +158,7 @@ export const Release = () => {
             with experimental composer and performance artist Sam Ashley
           </p>
         </Box>
-        <Box width="24%">
+        <Box>
           <Serif size="5">Track list</Serif>
           <p>
             Side A <br />
@@ -167,11 +167,10 @@ export const Release = () => {
             Side B <br />
             2. Love Among The Immortals [21:08]
           </p>
-
           <Box my={3}>
             <Serif size="5">Links</Serif>
           </Box>
-          <a href="#f">Sam Ashley on Lovely Music</a>
+          <a href="#f">Sam Ashley on Lovely Music</a> <br />
           <a href="#f">Werner Durand homepage</a>
         </Box>
       </Flex>

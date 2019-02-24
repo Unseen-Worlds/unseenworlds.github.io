@@ -19,7 +19,14 @@ export const Artist = () => {
             {artist.bio}
           </Box>
 
-          <Box mb={1}>
+          <Box my={4}>
+            <Image src={artist.videos[0]} />
+          </Box>
+        </Box>
+        <Box width="30%">
+          <Image src={artist.images[1]} />
+
+          <Box mt={3} mb={1}>
             <Serif>Releases</Serif>
           </Box>
           <Box>
@@ -28,23 +35,13 @@ export const Artist = () => {
                 <Flex alignItems="center">
                   <Box>
                     <Box>
-                      <Sans size="5" weight="semibold">
-                        {release.title}
-                      </Sans>
-                      <Sans color="black60">{release.id}</Sans>
+                      <Sans>{release.album}</Sans>
                     </Box>
                   </Box>
                 </Flex>
               )
             })}
           </Box>
-
-          <Box my={4}>
-            <Image src={artist.videos[0]} />
-          </Box>
-        </Box>
-        <Box width="30%">
-          <Image src={artist.images[1]} />
         </Box>
       </Flex>
     </Box>

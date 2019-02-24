@@ -1,41 +1,60 @@
 import React from "react"
 import { Box, Flex, Image } from "rebass"
-import { Sans, Serif } from "../components/Typography"
-import { artists, releases } from "../data"
-import { sample, sortBy } from "lodash"
+import { Sans } from "../components/Typography"
+import { artists } from "../data"
+import { sortBy } from "lodash"
 import { Link } from "@reach/router"
 import { Spacer } from "../components/Spacer"
 import styled from "styled-components"
 
-export const Artists = () => {
+export const Artists = props => {
   return (
     <Container>
       <Flex flexWrap="wrap" justifyContent="space-between">
         {sortBy(artists, "name").map((artist, index) => {
           return (
-            <Box key={index} mb={8} width="30%">
-              <Sans size="6" weight="light" color="teal">
-                <Link to="/artist">{artist.name}</Link>
-              </Sans>
-              <Spacer my={3} />
+            <Artist
+              key={index}
+              mb={8}
+              width="30%"
+              onClick={() => props.navigate("/release")}
+            >
               <Box>
                 <ArtistImage
                   src={artist.images[0]}
                   width={"100%"}
                   height={300}
                 />
-                {/*
-                <Box my={2}>
-                  <Serif size="2">Releases</Serif>
-                </Box>
-                <Box>
-                  <Image width={70} src={sample(releases).images[0]} />
-                  <Spacer mx="5px" style={{ display: "inline-block" }} />
-                  <Image width={70} src={sample(releases).images[0]} />
-                </Box>
-                */}
+
+                <Spacer my={3} />
+
+                <Flex>
+                  <Box pr={2}>
+                    <Sans size="6" weight="light" color="teal">
+                      <Link to="/artist" style={{ whitespace: "nowrap" }}>
+                        {artist.name}
+                      </Link>
+                    </Sans>
+                  </Box>
+                  <Box mt="8px">
+                    {artist.releases.map((release, index) => {
+                      return (
+                        <Box mb="5px" key={index}>
+                          <Sans size="3" weight="regular">
+                            <Link
+                              to="/release"
+                              onClick={event => event.stopPropagation()}
+                            >
+                              {release.album}
+                            </Link>
+                          </Sans>
+                        </Box>
+                      )
+                    })}
+                  </Box>
+                </Flex>
               </Box>
-            </Box>
+            </Artist>
           )
         })}
       </Flex>
@@ -51,6 +70,10 @@ const Container = styled(Box)`
       text-decoration: underline;
     }
   }
+`
+
+const Artist = styled(Box)`
+  cursor: pointer;
 `
 
 const ArtistImage = styled(Image)`
