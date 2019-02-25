@@ -7,6 +7,7 @@ import { color, breakpoints } from "../theme"
 import { Serif, Sans } from "./Typography"
 import { ReactComponent as NavToggle } from "../assets/NavToggle.svg"
 import { Mobile, Desktop, RenderIf } from "./Responsive"
+import { useSpring, animated } from "react-spring"
 
 const LinkItem = props => {
   return (
@@ -138,6 +139,15 @@ const DesktopNavigation = () => {
 const MobileNavigation = () => {
   const [isOpen, toggleOpen] = useGlobal("mobileNavOpen")
 
+  const animateStyles = {
+    position: "relative",
+    left: isOpen ? 0 : -200,
+  }
+  const expandNavAnimation = useSpring({
+    ...animateStyles,
+    from: animateStyles,
+  })
+
   return (
     <MobileContainer onClick={() => toggleOpen(!isOpen)}>
       <NavToggle
@@ -146,12 +156,12 @@ const MobileNavigation = () => {
           opacity: 0.3,
         }}
       />
-      {isOpen && (
+      <animated.div style={expandNavAnimation}>
         <Container my={5} alignItems="flex-start" width="100%">
           <NavItems />
           {/* <SocialItems /> */}
         </Container>
-      )}
+      </animated.div>
     </MobileContainer>
   )
 }
@@ -175,4 +185,5 @@ const MobileContainer = styled(Box)`
   cursor: pointer;
   position: absolute;
   top: 20px;
+  z-index: 1;
 `

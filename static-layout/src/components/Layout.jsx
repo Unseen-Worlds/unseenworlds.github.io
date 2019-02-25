@@ -4,6 +4,8 @@ import { setGlobal, useGlobal } from "reactn"
 import { Box } from "rebass"
 import { Logo } from "./Logo"
 import { Navigation } from "./Navigation"
+import { useSpring, animated } from "react-spring"
+import { Desktop, Mobile } from "./Responsive"
 import { Footer } from "./Footer"
 
 setGlobal({
@@ -13,20 +15,29 @@ setGlobal({
 export const Layout = ({ children }) => {
   const [state] = useGlobal()
 
+  const expandNavAnimation = useSpring({
+    position: "relative",
+    left: state.mobileNavOpen ? 200 : 0,
+  })
+
   return (
     <>
       <Container p={[1, 4]}>
-        {state.mobileNavOpen ? (
+        <Desktop>
+          <Logo />
           <Navigation />
-        ) : (
-          <>
+          <Box mt={8}>{children}</Box>
+          <Footer />
+        </Desktop>
+
+        <Mobile>
+          <Navigation />
+          <animated.div style={expandNavAnimation}>
             <Logo />
-            <Navigation />
-            <Box mt={[3, 8]}>{children}</Box>
-          </>
-        )}
+            <Box mt={3}>{children}</Box>
+          </animated.div>
+        </Mobile>
       </Container>
-      <Footer />
     </>
   )
 }

@@ -19,9 +19,9 @@ export const Artist = () => {
             <Serif>Releases</Serif>
           </Box>
           <Box>
-            {artist.releases.map(release => {
+            {artist.releases.map((release, index) => {
               return (
-                <Flex alignItems="center">
+                <Flex alignItems="center" key={index}>
                   <Box>
                     <Box>
                       <Sans>◮ {release.album}</Sans>

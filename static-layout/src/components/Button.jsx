@@ -23,6 +23,7 @@ export const Button = ({ children, variant, ...rest }) => {
   }
 
   const buttonProps = getButton()
+
   return (
     <ButtonWrapper {...buttonProps} {...rest}>
       <Sans size="2" weight="light">
