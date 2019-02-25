@@ -17,7 +17,7 @@ export const Home = () => {
       <Flex flexWrap="wrap" justifyContent="space-between">
         {take(releases, RELEASE_CAP).map((release, key) => {
           return (
-            <Box width={["100%", "30%"]} mb={[4, "4%"]} key={key}>
+            <Box width={["100%", "48%", "48%", "30%"]} mb={[4, "4%"]} key={key}>
               <Image width="100%" src={release.images[0]} />
             </Box>
           )

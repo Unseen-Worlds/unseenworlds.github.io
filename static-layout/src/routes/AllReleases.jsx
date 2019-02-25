@@ -1,9 +1,8 @@
 import React from "react"
 import { Box, Image, Flex } from "rebass"
-
 import { releases } from "../data"
 import { Sans } from "../components/Typography"
-import { Button } from "../components/Button"
+import { BuyButton } from "../components/Button"
 import { Spacer } from "../components/Spacer"
 
 export const AllReleases = () => {
@@ -11,12 +10,12 @@ export const AllReleases = () => {
     <Box>
       {releases.reverse().map((release, key) => {
         return (
-          <Box mb={4} key={key}>
-            <Flex>
-              <Box width="40%" pr={6}>
-                <Image height="auto" src={release.images[0]} />
+          <Box mb={[8, 4]} key={key}>
+            <Flex flexDirection={["column", "row"]}>
+              <Box width={["100%", "40%"]} pr={[0, 6]} mb={[3, 0]}>
+                <Image width="100%" height="auto" src={release.images[0]} />
               </Box>
-              <Box width="60%">
+              <Box width={["100%", "60%"]}>
                 <Sans size="5" weight="black" color="black80">
                   {release.artist.name}
                 </Sans>
@@ -33,16 +32,14 @@ export const AllReleases = () => {
 
                 <Spacer my={2} />
 
-                <Sans size="3" weight="semibold">
-                  More Info
+                <Sans size="2" weight="black">
+                  ◮ More Info
                 </Sans>
 
-                <Flex flexDirection="row" width="100%">
-                  <Button>CD - $11.00</Button>
-                  <Spacer mr={1} />
-                  <Button>DIGITAL - $7.00</Button>
-                  <Spacer mr={1} />
-                  <Button>LP - $18.00</Button>
+                <Flex flexDirection={"column"} mt={2}>
+                  <BuyButton>CD - $11.00</BuyButton>
+                  <BuyButton>DIGITAL - $7.00</BuyButton>
+                  <BuyButton>LP - $18.00</BuyButton>
                 </Flex>
               </Box>
             </Flex>

@@ -6,9 +6,9 @@ import { BorderBox } from "../components/BorderBox"
 
 export const About = () => {
   return (
-    <Flex>
-      <Box width="60%" pr={3}>
-        <Sans size="6">
+    <Flex flexDirection={["column", "row"]}>
+      <Box width={["100%", "60%"]} pr={[0, 3]}>
+        <Sans size={["5", "6"]}>
           Unseen Worlds is a record label releasing quality editions of
           unheralded and revolutionary, yet accessible, avant garde music. We
           are interested in media that capture a timeless ecstasy of creativity,
@@ -21,7 +21,7 @@ export const About = () => {
 
         <Spacer my={4} />
 
-        <Sans size="5">
+        <Sans size="4">
           <p>
             You may get in touch with us at{" "}
             <a href="#f">unseenworlds@unseenworlds.com</a> <br />
@@ -37,7 +37,7 @@ export const About = () => {
           </p>
         </Sans>
       </Box>
-      <BorderBox width="40%">
+      <BorderBox width={["100%", "40%"]} my={[2, 0]}>
         Our titles see distribution worldwide via Secretly Distribution
         <p>
           Direct Retail Sales: <br />

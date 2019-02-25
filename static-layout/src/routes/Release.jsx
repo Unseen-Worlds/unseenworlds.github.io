@@ -3,21 +3,26 @@ import { Box, Image, Flex } from "rebass"
 import { Sans, Serif } from "../components/Typography"
 import { releases, badges } from "../data"
 import { Spacer } from "../components/Spacer"
-import { Button } from "../components/Button"
+import { BuyButton } from "../components/Button"
 import { sample } from "lodash"
 
 import samAshleyPhoto from "../assets/large_Sam_Ashley.jpg"
+import { Desktop } from "../components/Responsive"
 
 export const Release = () => {
   const release = releases.find(release => release.id === "UW23")
 
   return (
     <Box>
-      <Flex justifyContent="space-between">
-        <Box pr={6}>
-          <Flex>
-            <Box pr={5}>
-              <Image width="398px" height="auto" src={release.images[0]} />
+      <Flex justifyContent="space-between" flexDirection={["column", "row"]}>
+        <Box pr={[0, 6]}>
+          <Flex flexDirection={["column", "row"]}>
+            <Box pr={[0, 5]}>
+              <Image
+                width={["100%", "398px"]}
+                height="auto"
+                src={release.images[0]}
+              />
             </Box>
             <Box>
               <Sans size="5" weight="black" color="black80">
@@ -36,47 +41,55 @@ export const Release = () => {
                 <Sans size="2">All items include instant download</Sans>
               </Box>
 
-              <Flex flexDirection="row" width="100%">
-                <Button>CD - $11.00</Button>
-                <Spacer mr={1} />
-                <Button>DIGITAL - $7.00</Button>
-                <Spacer mr={1} />
-                <Button>LP - $18.00</Button>
+              <Flex flexDirection={["row", "column"]} mt={2}>
+                <BuyButton>CD - $11.00</BuyButton>
+                <BuyButton>DIGITAL - $7.00</BuyButton>
+                <BuyButton>LP - $18.00</BuyButton>
               </Flex>
 
-              <Box my={5} style={{ opacity: 0.7 }}>
-                <Image src={badges.apple} height={30} /> <br />
+              <Box my={3} style={{ opacity: 0.7 }}>
+                <Image src={badges.apple} height={30} mr={["5px", 0]} /> <br />
                 <Image src={badges.spotify} height={30} />
               </Box>
             </Box>
           </Flex>
         </Box>
 
-        <Box>
+        <Desktop>
           <Box>
-            <Image
-              src={samAshleyPhoto}
-              width={200}
-              height={200}
-              style={{ objectFit: "cover" }}
-            />
-          </Box>
-          <Box my={2}>
-            <Box my={2}>
-              <Serif size="5">You May Also Like</Serif>
+            <Box>
+              <Image
+                src={samAshleyPhoto}
+                width={200}
+                height={200}
+                style={{ objectFit: "cover" }}
+              />
             </Box>
-            <Flex justifyContent="space-between">
-              <Image src={sample(releases).images[0]} width={90} height={90} />
-              <Image src={sample(releases).images[0]} width={90} height={90} />
-            </Flex>
+            <Box my={2}>
+              <Box my={2}>
+                <Serif size="5">You May Also Like</Serif>
+              </Box>
+              <Flex justifyContent="space-between">
+                <Image
+                  src={sample(releases).images[0]}
+                  width={90}
+                  height={90}
+                />
+                <Image
+                  src={sample(releases).images[0]}
+                  width={90}
+                  height={90}
+                />
+              </Flex>
+            </Box>
           </Box>
-        </Box>
+        </Desktop>
       </Flex>
 
-      <Spacer my={5} />
+      <Spacer my={[0, 5]} />
 
       <Flex justifyContent="space-between">
-        <Box width="80%" pr={6}>
+        <Box width={["100%", "80%"]} pr={[0, 6]}>
           <Serif size="6">Release Info</Serif>
 
           <p>
@@ -158,21 +171,23 @@ export const Release = () => {
             with experimental composer and performance artist Sam Ashley
           </p>
         </Box>
-        <Box>
-          <Serif size="5">Track list</Serif>
-          <p>
-            Side A <br />
-            1. I’d Rather Be Lucky Than Good [17:51] <br />
-            <br />
-            Side B <br />
-            2. Love Among The Immortals [21:08]
-          </p>
-          <Box my={3}>
-            <Serif size="5">Links</Serif>
+        <Desktop>
+          <Box>
+            <Serif size="5">Track list</Serif>
+            <p>
+              Side A <br />
+              1. I’d Rather Be Lucky Than Good [17:51] <br />
+              <br />
+              Side B <br />
+              2. Love Among The Immortals [21:08]
+            </p>
+            <Box my={3}>
+              <Serif size="5">Links</Serif>
+            </Box>
+            <a href="#f">Sam Ashley on Lovely Music</a> <br />
+            <a href="#f">Werner Durand homepage</a>
           </Box>
-          <a href="#f">Sam Ashley on Lovely Music</a> <br />
-          <a href="#f">Werner Durand homepage</a>
-        </Box>
+        </Desktop>
       </Flex>
     </Box>
   )

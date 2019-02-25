@@ -22,7 +22,7 @@ export const Layout = ({ children }) => {
           <>
             <Logo />
             <Navigation />
-            <Box mt={8}>{children}</Box>
+            <Box mt={[3, 8]}>{children}</Box>
           </>
         )}
       </Container>

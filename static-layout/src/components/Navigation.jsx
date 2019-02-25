@@ -1,14 +1,12 @@
 import React from "react"
 import { Box, Flex, Image } from "rebass"
 import { Link } from "@reach/router"
-import Media from "react-media"
 import styled from "styled-components"
 import { useGlobal } from "reactn"
-import { color } from "../theme"
-import { Serif } from "./Typography"
-import { Spacer } from "./Spacer"
-import { breakpoints } from "../theme"
+import { color, breakpoints } from "../theme"
+import { Serif, Sans } from "./Typography"
 import { ReactComponent as NavToggle } from "../assets/NavToggle.svg"
+import { Mobile, Desktop, RenderIf } from "./Responsive"
 
 const LinkItem = props => {
   return (
@@ -27,18 +25,6 @@ const LinkItem = props => {
           {props.children}
         </Link>
       </Serif>
-    </Box>
-  )
-}
-
-const SocialLink = props => {
-  const size = [40, 20]
-
-  return (
-    <Box width={size} height={size} mt={1} m={[1, "3px"]}>
-      <a href={props.url} target="_blank" rel="noopener noreferrer">
-        <Image src={props.image} />
-      </a>
     </Box>
   )
 }
@@ -62,31 +48,37 @@ const SocialItems = () => {
   return (
     <Flex
       flexWrap={["wrap", ""]}
-      px={[2, 0]}
-      justifyContent="flex-end"
+      flexDirection={["column", "row"]}
+      justifyContent={["flex-start", "flex-end"]}
       width="100%"
     >
       <SocialLink
+        label="Bandcamp"
         url="https://unseenworlds.bandcamp.com/"
         image={require("../assets/social/rounded-bandcamp.png")}
       />
       <SocialLink
+        label="Spotify"
         url="https://open.spotify.com/user/unseenworlds"
         image={require("../assets/social/rounded-spotify.png")}
       />
       <SocialLink
+        label="Apple Music"
         url="https://itunes.apple.com/profile/unseenworlds"
         image={require("../assets/social/rounded-apple-music.png")}
       />
       <SocialLink
+        label="Twitter"
         url="https://twitter.com/Unseen_Worlds"
         image={require("../assets/social/rounded-twitter.png")}
       />
       <SocialLink
+        label="Instagram"
         url="https://www.instagram.com/unseen_worlds"
         image={require("../assets/social/rounded-instagram.png")}
       />
       <SocialLink
+        label="Facebook"
         url="https://www.facebook.com/unseenworlds"
         image={require("../assets/social/rounded-facebook.png")}
       />
@@ -94,17 +86,41 @@ const SocialItems = () => {
   )
 }
 
+const SocialLink = props => {
+  const size = [30, 20]
+
+  return (
+    <>
+      <Desktop>
+        <Box width={size} height={size} mt={1} pt={1} m={[1, "5px"]}>
+          <a href={props.url} target="_blank" rel="noopener noreferrer">
+            <Image src={props.image} />
+          </a>
+        </Box>
+      </Desktop>
+      <Mobile>
+        <Sans size="2">
+          <a href={props.url} target="_blank" rel="noopener noreferrer">
+            <Box width={size} height={size} mt={1} ml={2} mb={1}>
+              <Image src={props.image} /> {props.label}
+            </Box>
+          </a>
+        </Sans>
+      </Mobile>
+    </>
+  )
+}
+
 export const Navigation = () => {
   return (
-    <Media query={{ maxWidth: breakpoints.sm }}>
-      {mobile => {
-        if (mobile) {
-          return <MobileNavigation />
-        } else {
-          return <DesktopNavigation />
-        }
-      }}
-    </Media>
+    <>
+      <Mobile>
+        <MobileNavigation />
+      </Mobile>
+      <Desktop>
+        <DesktopNavigation />
+      </Desktop>
+    </>
   )
 }
 
@@ -112,7 +128,9 @@ const DesktopNavigation = () => {
   return (
     <Container my={5} alignItems="center" flexDirection="row">
       <NavItems />
-      <SocialItems />
+      <RenderIf greaterThan={breakpoints.lg}>
+        <SocialItems />
+      </RenderIf>
     </Container>
   )
 }
@@ -129,15 +147,9 @@ const MobileNavigation = () => {
         }}
       />
       {isOpen && (
-        <Container
-          my={5}
-          alignItems="flex-start"
-          flexDirection="row"
-          width="100%"
-        >
+        <Container my={5} alignItems="flex-start" width="100%">
           <NavItems />
-          <Spacer my={2} />
-          <SocialItems />
+          {/* <SocialItems /> */}
         </Container>
       )}
     </MobileContainer>
