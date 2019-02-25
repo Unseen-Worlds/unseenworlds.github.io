@@ -5,12 +5,12 @@ import { Button } from "../components/Button"
 
 export const Ephemera = () => {
   return (
-    <Flex justifyContent="space-between">
+    <Flex flexDirection={["column", "row"]} justifyContent="space-between">
       {merch.map((item, index) => {
         return (
-          <Box key={index} width="30%">
-            <Box>
-              <Image src={item.image} />
+          <Box key={index} width={["100%", "30%"]} mb={[4, 0]}>
+            <Box width={["100%"]}>
+              <Image width={["100%"]} src={item.image} />
             </Box>
             <Box>{item.content}</Box>
             <Box my={2}>

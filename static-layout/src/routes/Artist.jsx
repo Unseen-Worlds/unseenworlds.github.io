@@ -8,24 +8,13 @@ export const Artist = () => {
 
   return (
     <Box>
-      <Flex>
-        <Box width="70%" pr={8}>
+      <Flex flexDirection={["column", "row"]}>
+        <Box width={["100%", "70%"]} pr={[0, 8]}>
           <Box>
             <Sans size="7" weight="light" color="teal">
               {artist.name}
             </Sans>
           </Box>
-          <Box mt={2} mb={4}>
-            {artist.bio}
-          </Box>
-
-          <Box my={4}>
-            <Image src={artist.videos[0]} />
-          </Box>
-        </Box>
-        <Box width="30%">
-          <Image src={artist.images[1]} />
-
           <Box mt={3} mb={1}>
             <Serif>Releases</Serif>
           </Box>
@@ -35,13 +24,23 @@ export const Artist = () => {
                 <Flex alignItems="center">
                   <Box>
                     <Box>
-                      <Sans>{release.album}</Sans>
+                      <Sans>◮ {release.album}</Sans>
                     </Box>
                   </Box>
                 </Flex>
               )
             })}
           </Box>
+          <Box mt={2} mb={4}>
+            {artist.bio}
+          </Box>
+
+          <Box my={4}>
+            <Image src={artist.videos[0]} />
+          </Box>
+        </Box>
+        <Box width={["100%", "30%"]}>
+          <Image src={artist.images[1]} />
         </Box>
       </Flex>
     </Box>

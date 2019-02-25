@@ -16,8 +16,7 @@ export const Button = ({ children, variant, ...rest }) => {
       default: {
         return {
           bg: "teal",
-          px: 1,
-          py: "5px",
+          py: "3px",
         }
       }
     }
@@ -36,4 +35,14 @@ export const Button = ({ children, variant, ...rest }) => {
 const ButtonWrapper = styled(ButtonBase)`
   color: white;
   white-space: nowrap;
+  border-radius: 3px;
+  justify-content: center;
+  display: flex;
+`
+
+export const BuyButton = styled(Button).attrs({
+  mb: 1,
+  mr: ["5px", 0],
+})`
+  width: 100px;
 `
