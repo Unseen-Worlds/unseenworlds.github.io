@@ -5,9 +5,9 @@ import { ReactComponent as LogoDesktop } from "../assets/LogoDesktop.svg"
 import { ReactComponent as LogoMobile } from "../assets/LogoMobile.svg"
 import { Mobile, Desktop } from "./Responsive"
 
-export const Logo = () => {
+export const Logo = props => {
   return (
-    <Flex justifyContent="center">
+    <Flex justifyContent="center" style={props.style}>
       <Link to="/">
         <Mobile>
           <Box mt={1}>

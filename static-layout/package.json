@@ -34,6 +34,7 @@
     "react-dom": "^16.8.2",
     "react-media": "^1.9.2",
     "react-scripts": "2.1.5",
+    "react-spring": "^8.0.7",
     "react-twitter-embed": "^2.0.4",
     "reactn": "^1.0.0",
     "rebass": "^3.0.1",
