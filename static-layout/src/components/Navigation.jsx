@@ -41,6 +41,7 @@ const NavItems = () => {
       <LinkItem to="/about">About</LinkItem>
       <LinkItem to="/news">News</LinkItem>
       <LinkItem to="/ephemera">Ephemera</LinkItem>
+      <LinkItem to="/mystery">Mystery</LinkItem>
     </Flex>
   )
 }
